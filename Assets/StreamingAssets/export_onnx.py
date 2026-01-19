@@ -365,6 +365,12 @@ def export_to_onnx(
     
     print(f"开始导出ONNX模型到: {output_path}")
     print(f"输入形状: {dummy_input.shape}")
+    print(f"ONNX Opset版本: {opset_version}")
+    
+    # 推荐使用opset 9-13以获得更好的兼容性
+    if opset_version > 13:
+        print(f"警告: Opset {opset_version} 可能与较旧的ONNX Runtime不兼容")
+        print("建议使用 opset 9-13 以获得更好的兼容性")
     
     torch.onnx.export(
         model,
@@ -419,7 +425,7 @@ def main():
     parser.add_argument('--checkpoint', '-c', required=True, help='模型checkpoint路径')
     parser.add_argument('--output', '-o', default='model.onnx', help='输出ONNX文件路径')
     parser.add_argument('--config', help='配置文件路径(JSON格式)')
-    parser.add_argument('--opset', type=int, default=15, help='ONNX opset版本')
+    parser.add_argument('--opset', type=int, default=12, help='ONNX opset版本 (推荐9-14以兼容旧版Runtime)')
     parser.add_argument('--input-length', type=int, default=100, 
                        help='示例输入长度')
     
