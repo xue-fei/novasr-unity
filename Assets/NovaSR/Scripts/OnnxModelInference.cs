@@ -134,7 +134,7 @@ public class OnnxModelInference : MonoBehaviour
 
         try
         {
-            var startTime = Time.realtimeSinceStartup;
+            //var startTime = Time.realtimeSinceStartup;
 
             // 创建输入张量 [batch_size=1, channels=1, length]
             var inputDimensions = new[] { 1, 1, inputData.Length };
@@ -153,8 +153,10 @@ public class OnnxModelInference : MonoBehaviour
                 output = results.First().AsEnumerable<float>().ToArray();
             }
 
-            lastInferenceTime = (Time.realtimeSinceStartup - startTime) * 1000f;
-
+            //Loom.QueueOnMainThread(() =>
+            //{
+            //    lastInferenceTime = (Time.realtimeSinceStartup - startTime) * 1000f;
+            //});
             if (showDebugInfo)
             {
                 Debug.Log($"推理完成: 输入长度={inputData.Length}, 输出长度={output.Length}, 耗时={lastInferenceTime:F2}ms");

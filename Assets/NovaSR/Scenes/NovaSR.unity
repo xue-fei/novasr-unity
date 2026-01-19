@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modelInference: {fileID: 143917447}
-  testAudioClip: {fileID: 0}
+  testAudioClip: {fileID: 8300000, guid: fc71accca74e26e4fa5680917e85de3b, type: 3}
 --- !u!114 &143917447
 MonoBehaviour:
   m_ObjectHideFlags: 0
