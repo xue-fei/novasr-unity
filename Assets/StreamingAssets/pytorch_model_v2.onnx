@@ -1,0 +1,2278 @@
+
+pytorch	2.9.1+cpu:÷Ç	
+ç
+inputval_0node_Shape_0"Shape*
+start†*
+
+end†JÑ
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_17: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']Jã
+pkg.torch.onnx.fx_nodeq%sym_size_int_17 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%x, 2), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_17']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+á
+val_0sym_size_int_17node_sym_size_int_17"SqueezeJÑ
+	namespacew_empty_nn_module_stack_from_metadata_hook: _empty_nn_module_stack_from_metadata_hook/sym_size_int_17: aten.sym_size.intJd
+pkg.torch.onnx.class_hierarchyB['_empty_nn_module_stack_from_metadata_hook', 'aten.sym_size.int']Jã
+pkg.torch.onnx.fx_nodeq%sym_size_int_17 : [num_users=3] = call_function[target=torch.ops.aten.sym_size.int](args = (%x, 2), kwargs = {})J^
+pkg.torch.onnx.name_scopes@['_empty_nn_module_stack_from_metadata_hook', 'sym_size_int_17']Js
+pkg.torch.onnx.stack_traceUFile "torch/fx/passes/runtime_assert.py", line 24, in insert_deferred_runtime_asserts
+—
+input
+dec.conv_pre.weight
+dec.conv_pre.biasconv1dnode_conv1d"Conv*
+group†*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†JÖ
+	namespacex: __main__.SynthesizerTrn/dec: __main__.Generator/dec.conv_pre: torch.nn.modules.conv.Conv1d/conv1d: aten.conv1d.defaultJä
+pkg.torch.onnx.class_hierarchyh['__main__.SynthesizerTrn', '__main__.Generator', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J∫
+pkg.torch.onnx.fx_nodeü%conv1d : [num_users=2] = call_function[target=torch.ops.aten.conv1d.default](args = (%x, %p_dec_conv_pre_weight, %p_dec_conv_pre_bias, [1], [3]), kwargs = {})JC
+pkg.torch.onnx.name_scopes%['', 'dec', 'dec.conv_pre', 'conv1d']Jó
+pkg.torch.onnx.stack_trace¯  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 221, in forward
+    x = self.conv_pre(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 366, in _conv_forward
+    return F.conv1d(
+
+ô
+sym_size_int_17
+val_1mul_7
+node_mul_7"MulJ]
+	namespaceP: __main__.SynthesizerTrn/dec: __main__.Generator/mul_7: <built-in function mul>Jn
+pkg.torch.onnx.class_hierarchyL['__main__.SynthesizerTrn', '__main__.Generator', '<built-in function mul>']JÄ
+pkg.torch.onnx.fx_nodef%mul_7 : [num_users=7] = call_function[target=operator.mul](args = (%sym_size_int_17, 3), kwargs = {})J2
+pkg.torch.onnx.name_scopes['', 'dec', 'mul_7']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+∂
+sym_size_int_17val_2node_Cast_2"Cast*	
+to†Jc
+	namespaceV: __main__.SynthesizerTrn/dec: __main__.Generator/truediv: <built-in function truediv>Jr
+pkg.torch.onnx.class_hierarchyP['__main__.SynthesizerTrn', '__main__.Generator', '<built-in function truediv>']Jã
+pkg.torch.onnx.fx_nodeq%truediv : [num_users=1] = call_function[target=operator.truediv](args = (%sym_size_int_17, %mul_7), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'dec', 'truediv']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+¨
+mul_7val_3node_Cast_3"Cast*	
+to†Jc
+	namespaceV: __main__.SynthesizerTrn/dec: __main__.Generator/truediv: <built-in function truediv>Jr
+pkg.torch.onnx.class_hierarchyP['__main__.SynthesizerTrn', '__main__.Generator', '<built-in function truediv>']Jã
+pkg.torch.onnx.fx_nodeq%truediv : [num_users=1] = call_function[target=operator.truediv](args = (%sym_size_int_17, %mul_7), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'dec', 'truediv']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+™
+val_2
+val_3truedivnode_truediv"DivJc
+	namespaceV: __main__.SynthesizerTrn/dec: __main__.Generator/truediv: <built-in function truediv>Jr
+pkg.torch.onnx.class_hierarchyP['__main__.SynthesizerTrn', '__main__.Generator', '<built-in function truediv>']Jã
+pkg.torch.onnx.fx_nodeq%truediv : [num_users=1] = call_function[target=operator.truediv](args = (%sym_size_int_17, %mul_7), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'dec', 'truediv']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+π
+val_5
+mul_7
+val_7arangenode_arange"RangeJZ
+	namespaceM: __main__.SynthesizerTrn/dec: __main__.Generator/arange: aten.arange.defaultJj
+pkg.torch.onnx.class_hierarchyH['__main__.SynthesizerTrn', '__main__.Generator', 'aten.arange.default']J•
+pkg.torch.onnx.fx_nodeä%arange : [num_users=1] = call_function[target=torch.ops.aten.arange.default](args = (%mul_7,), kwargs = {device: cpu, pin_memory: False})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'arange']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Ω
+arange_to_copynode__to_copy"Cast*	
+to†J^
+	namespaceQ: __main__.SynthesizerTrn/dec: __main__.Generator/_to_copy: aten._to_copy.defaultJl
+pkg.torch.onnx.class_hierarchyJ['__main__.SynthesizerTrn', '__main__.Generator', 'aten._to_copy.default']J†
+pkg.torch.onnx.fx_nodeÖ%_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%arange,), kwargs = {dtype: torch.float32})J5
+pkg.torch.onnx.name_scopes['', 'dec', '_to_copy']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+è
+_to_copy
+val_8add_11node_add_11"AddJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/add_11: aten.add.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.add.Tensor']Jâ
+pkg.torch.onnx.fx_nodeo%add_11 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%_to_copy, 0.5), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'add_11']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+í
+add_11
+truedivmul_11node_mul_11"MulJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/mul_11: aten.mul.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.mul.Tensor']Jå
+pkg.torch.onnx.fx_noder%mul_11 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%add_11, %truediv), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'mul_11']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Ü
+mul_11
+val_8sub_5
+node_sub_5"SubJU
+	namespaceH: __main__.SynthesizerTrn/dec: __main__.Generator/sub_5: aten.sub.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.sub.Tensor']JÜ
+pkg.torch.onnx.fx_nodel%sub_5 : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%mul_11, 0.5), kwargs = {})J2
+pkg.torch.onnx.name_scopes['', 'dec', 'sub_5']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+é
+sub_5
+val_9clamp
+node_clamp"ClipJX
+	namespaceK: __main__.SynthesizerTrn/dec: __main__.Generator/clamp: aten.clamp.defaultJi
+pkg.torch.onnx.class_hierarchyG['__main__.SynthesizerTrn', '__main__.Generator', 'aten.clamp.default']Jà
+pkg.torch.onnx.fx_noden%clamp : [num_users=1] = call_function[target=torch.ops.aten.clamp.default](args = (%sub_5, 0.0), kwargs = {})J2
+pkg.torch.onnx.name_scopes['', 'dec', 'clamp']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+©
+mul_7
+val_10val_11node_Reshape_11"Reshape*
+	allowzero †JV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/view: aten.view.defaultJh
+pkg.torch.onnx.class_hierarchyF['__main__.SynthesizerTrn', '__main__.Generator', 'aten.view.default']Jã
+pkg.torch.onnx.fx_nodeq%view : [num_users=2] = call_function[target=torch.ops.aten.view.default](args = (%clamp, [%mul_7]), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'dec', 'view']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+°
+clamp
+val_11view	node_view"Reshape*
+	allowzero†JV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/view: aten.view.defaultJh
+pkg.torch.onnx.class_hierarchyF['__main__.SynthesizerTrn', '__main__.Generator', 'aten.view.default']Jã
+pkg.torch.onnx.fx_nodeq%view : [num_users=2] = call_function[target=torch.ops.aten.view.default](args = (%clamp, [%mul_7]), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'dec', 'view']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+¡
+view
+_to_copy_1node__to_copy_1"Cast*	
+to†J`
+	namespaceS: __main__.SynthesizerTrn/dec: __main__.Generator/_to_copy_1: aten._to_copy.defaultJl
+pkg.torch.onnx.class_hierarchyJ['__main__.SynthesizerTrn', '__main__.Generator', 'aten._to_copy.default']Jû
+pkg.torch.onnx.fx_nodeÉ%_to_copy_1 : [num_users=3] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.int64})J7
+pkg.torch.onnx.name_scopes['', 'dec', '_to_copy_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+ë
+
+_to_copy_1
+val_7add_24node_add_24"AddJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/add_24: aten.add.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.add.Tensor']Jâ
+pkg.torch.onnx.fx_nodeo%add_24 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%_to_copy_1, 1), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'add_24']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+û
+sym_size_int_17
+val_7sub_11node_sub_11"SubJ^
+	namespaceQ: __main__.SynthesizerTrn/dec: __main__.Generator/sub_11: <built-in function sub>Jn
+pkg.torch.onnx.class_hierarchyL['__main__.SynthesizerTrn', '__main__.Generator', '<built-in function sub>']JÅ
+pkg.torch.onnx.fx_nodeg%sub_11 : [num_users=1] = call_function[target=operator.sub](args = (%sym_size_int_17, 1), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'sub_11']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+ß
+add_24
+ 
+sub_11clamp_1node_clamp_1"ClipJZ
+	namespaceM: __main__.SynthesizerTrn/dec: __main__.Generator/clamp_1: aten.clamp.defaultJi
+pkg.torch.onnx.class_hierarchyG['__main__.SynthesizerTrn', '__main__.Generator', 'aten.clamp.default']Jï
+pkg.torch.onnx.fx_node{%clamp_1 : [num_users=1] = call_function[target=torch.ops.aten.clamp.default](args = (%add_24, None, %sub_11), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'dec', 'clamp_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Î
+conv1dval_14node_Transpose_14"	Transpose*
+perm@@ @†Jg
+	namespaceZ: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JØ
+pkg.torch.onnx.fx_nodeî%_unsafe_index : [num_users=2] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %_to_copy_1]), kwargs = {})J:
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Ê
+
+_to_copy_1
+val_10val_19node_Unsqueeze_19"	UnsqueezeJg
+	namespaceZ: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JØ
+pkg.torch.onnx.fx_nodeî%_unsafe_index : [num_users=2] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %_to_copy_1]), kwargs = {})J:
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Û
+val_14
+val_19val_21node_GatherND_21"GatherND*
+
+batch_dims †Jg
+	namespaceZ: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JØ
+pkg.torch.onnx.fx_nodeî%_unsafe_index : [num_users=2] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %_to_copy_1]), kwargs = {})J:
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Û
+val_21_unsafe_indexnode__unsafe_index"	Transpose*
+perm@@@ †Jg
+	namespaceZ: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JØ
+pkg.torch.onnx.fx_nodeî%_unsafe_index : [num_users=2] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %_to_copy_1]), kwargs = {})J:
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Ê
+clamp_1
+val_10val_26node_Unsqueeze_26"	UnsqueezeJi
+	namespace\: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index_1: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JÆ
+pkg.torch.onnx.fx_nodeì%_unsafe_index_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %clamp_1]), kwargs = {})J<
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+ˆ
+val_14
+val_26val_28node_GatherND_28"GatherND*
+
+batch_dims †Ji
+	namespace\: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index_1: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JÆ
+pkg.torch.onnx.fx_nodeì%_unsafe_index_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %clamp_1]), kwargs = {})J<
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+˙
+val_28_unsafe_index_1node__unsafe_index_1"	Transpose*
+perm@@@ †Ji
+	namespace\: __main__.SynthesizerTrn/dec: __main__.Generator/_unsafe_index_1: aten._unsafe_index.TensorJp
+pkg.torch.onnx.class_hierarchyN['__main__.SynthesizerTrn', '__main__.Generator', 'aten._unsafe_index.Tensor']JÆ
+pkg.torch.onnx.fx_nodeì%_unsafe_index_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_index.Tensor](args = (%conv1d, [None, None, %clamp_1]), kwargs = {})J<
+pkg.torch.onnx.name_scopes['', 'dec', '_unsafe_index_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+–
+
+_to_copy_1convert_element_type_default!node_convert_element_type_default"Cast*	
+to†J
+	namespacer: __main__.SynthesizerTrn/dec: __main__.Generator/convert_element_type_default: prims.convert_element_type.defaultJy
+pkg.torch.onnx.class_hierarchyW['__main__.SynthesizerTrn', '__main__.Generator', 'prims.convert_element_type.default']J≈
+pkg.torch.onnx.fx_node™%convert_element_type_default : [num_users=1] = call_function[target=torch.ops.prims.convert_element_type.default](args = (%_to_copy_1,), kwargs = {dtype: torch.float32})JI
+pkg.torch.onnx.name_scopes+['', 'dec', 'convert_element_type_default']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+π
+view
+convert_element_type_defaultsub_15node_sub_15"SubJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/sub_15: aten.sub.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.sub.Tensor']J†
+pkg.torch.onnx.fx_nodeÖ%sub_15 : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%view, %convert_element_type_default), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'sub_15']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+ß
+sub_15
+val_9
+val_30clamp_2node_clamp_2"ClipJZ
+	namespaceM: __main__.SynthesizerTrn/dec: __main__.Generator/clamp_2: aten.clamp.defaultJi
+pkg.torch.onnx.class_hierarchyG['__main__.SynthesizerTrn', '__main__.Generator', 'aten.clamp.default']Jê
+pkg.torch.onnx.fx_nodev%clamp_2 : [num_users=1] = call_function[target=torch.ops.aten.clamp.default](args = (%sub_15, 0.0, 1.0), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'dec', 'clamp_2']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+±
+_unsafe_index_1
+_unsafe_indexsub_18node_sub_18"SubJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/sub_18: aten.sub.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.sub.Tensor']Jú
+pkg.torch.onnx.fx_nodeÅ%sub_18 : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_unsafe_index_1, %_unsafe_index), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'sub_18']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+í
+sub_18
+clamp_2mul_30node_mul_30"MulJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/mul_30: aten.mul.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.mul.Tensor']Jå
+pkg.torch.onnx.fx_noder%mul_30 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub_18, %clamp_2), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'mul_30']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+û
+_unsafe_index
+mul_30add_45node_add_45"AddJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/add_45: aten.add.TensorJf
+pkg.torch.onnx.class_hierarchyD['__main__.SynthesizerTrn', '__main__.Generator', 'aten.add.Tensor']Jí
+pkg.torch.onnx.fx_nodex%add_45 : [num_users=2] = call_function[target=torch.ops.aten.add.Tensor](args = (%_unsafe_index, %mul_30), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'dec', 'add_45']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 222, in forward
+    x = F.interpolate(x, int(x.shape[-1] * 3), mode='linear')
+
+Ì
+add_45
+slice_1conv1d_1node_Conv_208"Conv*
+group †*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†Jú
+	namespaceé: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/conv1d_1: aten.conv1d.defaultJL
+!pkg.onnxscript.rewriter.rule_name'RemoveOptionalBiasFromConv, FuseConvPadJ±
+pkg.torch.onnx.class_hierarchyé['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.conv1d.default']J©
+pkg.torch.onnx.fx_nodeé%conv1d_1 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%pad, %slice_1, None, [1], [0], [1], 32), kwargs = {})Jæ
+pkg.torch.onnx.name_scopesü['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'conv1d_1']J÷
+pkg.torch.onnx.stack_trace∑  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 84, in _polyphase_upsample_fused
+    out = F.conv1d(x, weight, groups=x.shape[1], stride=1)
+
+⁄
+val_50
+val_51
+val_64
+val_11val_54node_Concat_54"Concat*
+axis †Jò
+	namespaceä: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/view_1: aten.view.defaultJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.view.default']Jõ
+pkg.torch.onnx.fx_nodeÄ%view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%conv1d_1, [1, 32, 2, %mul_7]), kwargs = {})Jº
+pkg.torch.onnx.name_scopesù['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'view_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+œ
+conv1d_1
+val_54view_1node_view_1"Reshape*
+	allowzero†Jò
+	namespaceä: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/view_1: aten.view.defaultJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.view.default']Jõ
+pkg.torch.onnx.fx_nodeÄ%view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%conv1d_1, [1, 32, 2, %mul_7]), kwargs = {})Jº
+pkg.torch.onnx.name_scopesù['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'view_1']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+…
+view_1	transposenode_transpose"	Transpose*
+perm@ @@@†Jú
+	namespaceé: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/transpose: aten.transpose.intJ∞
+pkg.torch.onnx.class_hierarchyç['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.transpose.int']Jé
+pkg.torch.onnx.fx_nodet%transpose : [num_users=1] = call_function[target=torch.ops.aten.transpose.int](args = (%view_1, 2, 3), kwargs = {})Jø
+pkg.torch.onnx.name_scopes†['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'transpose']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+û
+val_55
+mul_7mul_52node_mul_52"MulJû
+	namespaceê: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/mul_52: <built-in function mul>Jµ
+pkg.torch.onnx.class_hierarchyí['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function mul>']Jx
+pkg.torch.onnx.fx_node^%mul_52 : [num_users=1] = call_function[target=operator.mul](args = (32, %mul_7), kwargs = {})Jº
+pkg.torch.onnx.name_scopesù['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'mul_52']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+ü
+mul_52
+val_56mul_53node_mul_53"MulJû
+	namespaceê: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/mul_53: <built-in function mul>Jµ
+pkg.torch.onnx.class_hierarchyí['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function mul>']Jx
+pkg.torch.onnx.fx_node^%mul_53 : [num_users=1] = call_function[target=operator.mul](args = (%mul_52, 2), kwargs = {})Jº
+pkg.torch.onnx.name_scopesù['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'mul_53']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+∫
+mul_53
+val_55floordivnode_floordiv"DivJ•
+	namespaceó: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/floordiv: <built-in function floordiv>J∫
+pkg.torch.onnx.class_hierarchyó['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function floordiv>']JÄ
+pkg.torch.onnx.fx_nodef%floordiv : [num_users=1] = call_function[target=operator.floordiv](args = (%mul_53, 32), kwargs = {})Jæ
+pkg.torch.onnx.name_scopesü['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'floordiv']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+˙
+floordiv
+val_10val_60node_Reshape_60"Reshape*
+	allowzero †J¶
+	namespaceò: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¶
+pkg.torch.onnx.fx_nodeã%_unsafe_view : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone, [1, 32, %floordiv]), kwargs = {})J¬
+pkg.torch.onnx.name_scopes£['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', '_unsafe_view']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+˘
+val_50
+val_51
+val_60val_61node_Concat_61"Concat*
+axis †J¶
+	namespaceò: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¶
+pkg.torch.onnx.fx_nodeã%_unsafe_view : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone, [1, 32, %floordiv]), kwargs = {})J¬
+pkg.torch.onnx.name_scopes£['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', '_unsafe_view']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+É
+	transpose
+val_61_unsafe_viewnode__unsafe_view"Reshape*
+	allowzero†J¶
+	namespaceò: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¶
+pkg.torch.onnx.fx_nodeã%_unsafe_view : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone, [1, 32, %floordiv]), kwargs = {})J¬
+pkg.torch.onnx.name_scopes£['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', '_unsafe_view']J‡
+pkg.torch.onnx.stack_trace¡  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+™
+_unsafe_view
+val_64
+val_68
+val_64
+val_50slice_2node_slice_2"SliceJô
+	namespaceã: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.upsample: __main__.UpSample1d/slice_2: aten.slice.TensorJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.slice.Tensor']Jï
+pkg.torch.onnx.fx_node{%slice_2 : [num_users=2] = call_function[target=torch.ops.aten.slice.Tensor](args = (%_unsafe_view, 2, 2, -2), kwargs = {})JΩ
+pkg.torch.onnx.name_scopesû['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.upsample', 'slice_2']Jµ
+pkg.torch.onnx.stack_traceñ  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 88, in _polyphase_upsample_fused
+    return out[..., 2:-2]
+
+„
+mul_77
+slice_2mul_78node_mul_78"MulJê
+	namespaceÇ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.act: __main__.SnakeBeta/mul_78: aten.mul.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.mul.Tensor']Jå
+pkg.torch.onnx.fx_noder%mul_78 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul_77, %slice_2), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.act', 'mul_78']J™
+pkg.torch.onnx.stack_traceã  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+≈
+mul_78cosnode_cos"CosJé
+	namespaceÄ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.act: __main__.SnakeBeta/cos: aten.cos.defaultJ≠
+pkg.torch.onnx.class_hierarchyä['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.cos.default']JÅ
+pkg.torch.onnx.fx_nodeg%cos : [num_users=1] = call_function[target=torch.ops.aten.cos.default](args = (%mul_78,), kwargs = {})J¥
+pkg.torch.onnx.name_scopesï['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.act', 'cos']J™
+pkg.torch.onnx.stack_traceã  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+◊
+val_30
+cossub_31node_sub_31"SubJê
+	namespaceÇ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.act: __main__.SnakeBeta/sub_31: aten.sub.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.sub.Tensor']JÑ
+pkg.torch.onnx.fx_nodej%sub_31 : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (1.0, %cos), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.act', 'sub_31']J™
+pkg.torch.onnx.stack_traceã  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+®
+sub_31
+(dec.resblocks.0.activations.0.act.inv_2bmul_88node_mul_88"MulJê
+	namespaceÇ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.act: __main__.SnakeBeta/mul_88: aten.mul.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.mul.Tensor']J∞
+pkg.torch.onnx.fx_nodeï%mul_88 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub_31, %b_dec_resblocks_0_activations_0_act_inv_2b), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.act', 'mul_88']J™
+pkg.torch.onnx.stack_traceã  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+„
+slice_2
+mul_88add_85node_add_85"AddJê
+	namespaceÇ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.act: __main__.SnakeBeta/add_85: aten.add.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.add.Tensor']Jå
+pkg.torch.onnx.fx_noder%add_85 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%slice_2, %mul_88), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.act', 'add_85']J™
+pkg.torch.onnx.stack_traceã  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+Ô
+add_85
+slice_3conv1d_2node_Conv_209"Conv*
+group †*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†JÄ
+	namespaceÚ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(None, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(None, None, 2).0.downsample: __main__.DownSample1d/dec.resblocks.0.activations.slice(None, None, 2).0.downsample.lowpass: __main__.LowPassFilter1d/conv1d_2: aten.conv1d.defaultJ?
+!pkg.onnxscript.rewriter.rule_nameRemoveOptionalBiasFromConvJœ
+pkg.torch.onnx.class_hierarchy¨['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.DownSample1d', '__main__.LowPassFilter1d', 'aten.conv1d.default']J¨
+pkg.torch.onnx.fx_nodeë%conv1d_2 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%add_85, %slice_3, None, [2], [5], [1], 32), kwargs = {})Jâ
+pkg.torch.onnx.name_scopesÍ['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(None, None, 2).0', 'dec.resblocks.0.activations.slice(None, None, 2).0.downsample', 'dec.resblocks.0.activations.slice(None, None, 2).0.downsample.lowpass', 'conv1d_2']Jï
+pkg.torch.onnx.stack_traceˆ  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 188, in forward
+    xt = a1(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 158, in forward
+    x = self.downsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 142, in forward
+    return self.lowpass(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 134, in forward
+    return F.conv1d(x, self.f_opt[:C], stride=self.stride, padding=5, groups=C)
+
+µ
+conv1d_2
+mul_98
+dec.resblocks.0.convs1.0.biasconv1d_3node_conv1d_3"Conv*
+group†*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†J∏
+	namespace™: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.convs1.0: torch.nn.modules.conv.Conv1d/conv1d_3: aten.conv1d.defaultJ†
+pkg.torch.onnx.class_hierarchy~['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J¿
+pkg.torch.onnx.fx_node•%conv1d_3 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%conv1d_2, %mul_98, %p_dec_resblocks_0_convs1_0_bias, [1], [1]), kwargs = {})Jd
+pkg.torch.onnx.name_scopesF['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.convs1.0', 'conv1d_3']JÖ
+pkg.torch.onnx.stack_traceÊ
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 189, in forward
+    xt = c1(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1878, in _call_impl
+    return inner()
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1829, in inner
+    result = forward_call(*args, **kwargs)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 366, in _conv_forward
+    return F.conv1d(
+
+Ê
+conv1d_3
+slice_1conv1d_4node_Conv_210"Conv*
+group †*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†Jñ
+	namespaceà: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/conv1d_4: aten.conv1d.defaultJL
+!pkg.onnxscript.rewriter.rule_name'RemoveOptionalBiasFromConv, FuseConvPadJ±
+pkg.torch.onnx.class_hierarchyé['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.conv1d.default']J´
+pkg.torch.onnx.fx_nodeê%conv1d_4 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%pad_1, %slice_4, None, [1], [0], [1], 32), kwargs = {})J∏
+pkg.torch.onnx.name_scopesô['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'conv1d_4']J◊
+pkg.torch.onnx.stack_trace∏  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 84, in _polyphase_upsample_fused
+    out = F.conv1d(x, weight, groups=x.shape[1], stride=1)
+
+é
+val_65
+mul_7add_154node_add_154"AddJô
+	namespaceã: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/add_154: <built-in function add>Jµ
+pkg.torch.onnx.class_hierarchyí['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function add>']Jy
+pkg.torch.onnx.fx_node_%add_154 : [num_users=2] = call_function[target=operator.add](args = (-2, %mul_7), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'add_154']J◊
+pkg.torch.onnx.stack_trace∏  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 84, in _polyphase_upsample_fused
+    out = F.conv1d(x, weight, groups=x.shape[1], stride=1)
+
+À
+add_154
+val_10val_112node_Reshape_112"Reshape*
+	allowzero †Jí
+	namespaceÑ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/view_2: aten.view.defaultJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.view.default']Jù
+pkg.torch.onnx.fx_nodeÇ%view_2 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%conv1d_4, [1, 32, 2, %add_154]), kwargs = {})J∂
+pkg.torch.onnx.name_scopesó['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'view_2']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+‘
+val_50
+val_51
+val_64
+val_112val_113node_Concat_113"Concat*
+axis †Jí
+	namespaceÑ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/view_2: aten.view.defaultJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.view.default']Jù
+pkg.torch.onnx.fx_nodeÇ%view_2 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%conv1d_4, [1, 32, 2, %add_154]), kwargs = {})J∂
+pkg.torch.onnx.name_scopesó['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'view_2']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+«
+conv1d_4
+val_113view_2node_view_2"Reshape*
+	allowzero†Jí
+	namespaceÑ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/view_2: aten.view.defaultJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.view.default']Jù
+pkg.torch.onnx.fx_nodeÇ%view_2 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%conv1d_4, [1, 32, 2, %add_154]), kwargs = {})J∂
+pkg.torch.onnx.name_scopesó['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'view_2']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+»
+view_2transpose_1node_transpose_1"	Transpose*
+perm@ @@@†Jò
+	namespaceä: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/transpose_1: aten.transpose.intJ∞
+pkg.torch.onnx.class_hierarchyç['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.transpose.int']Jê
+pkg.torch.onnx.fx_nodev%transpose_1 : [num_users=1] = call_function[target=torch.ops.aten.transpose.int](args = (%view_2, 2, 3), kwargs = {})Jª
+pkg.torch.onnx.name_scopesú['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'transpose_1']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+ú
+val_55
+add_154mul_114node_mul_114"MulJô
+	namespaceã: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/mul_114: <built-in function mul>Jµ
+pkg.torch.onnx.class_hierarchyí['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function mul>']J{
+pkg.torch.onnx.fx_nodea%mul_114 : [num_users=1] = call_function[target=operator.mul](args = (32, %add_154), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'mul_114']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+õ
+mul_114
+val_56mul_115node_mul_115"MulJô
+	namespaceã: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/mul_115: <built-in function mul>Jµ
+pkg.torch.onnx.class_hierarchyí['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function mul>']Jz
+pkg.torch.onnx.fx_node`%mul_115 : [num_users=1] = call_function[target=operator.mul](args = (%mul_114, 2), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'mul_115']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+ª
+mul_115
+val_55
+floordiv_1node_floordiv_1"DivJ°
+	namespaceì: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/floordiv_1: <built-in function floordiv>J∫
+pkg.torch.onnx.class_hierarchyó['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', '<built-in function floordiv>']JÉ
+pkg.torch.onnx.fx_nodei%floordiv_1 : [num_users=1] = call_function[target=operator.floordiv](args = (%mul_115, 32), kwargs = {})J∫
+pkg.torch.onnx.name_scopesõ['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'floordiv_1']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+˝
+
+floordiv_1
+val_10val_117node_Reshape_117"Reshape*
+	allowzero †J¢
+	namespaceî: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view_1: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¨
+pkg.torch.onnx.fx_nodeë%_unsafe_view_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone_1, [1, 32, %floordiv_1]), kwargs = {})Jæ
+pkg.torch.onnx.name_scopesü['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', '_unsafe_view_1']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+˚
+val_50
+val_51
+val_117val_118node_Concat_118"Concat*
+axis †J¢
+	namespaceî: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view_1: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¨
+pkg.torch.onnx.fx_nodeë%_unsafe_view_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone_1, [1, 32, %floordiv_1]), kwargs = {})Jæ
+pkg.torch.onnx.name_scopesü['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', '_unsafe_view_1']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+â
+transpose_1
+val_118_unsafe_view_1node__unsafe_view_1"Reshape*
+	allowzero†J¢
+	namespaceî: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/_unsafe_view_1: aten._unsafe_view.defaultJ∑
+pkg.torch.onnx.class_hierarchyî['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten._unsafe_view.default']J¨
+pkg.torch.onnx.fx_nodeë%_unsafe_view_1 : [num_users=1] = call_function[target=torch.ops.aten._unsafe_view.default](args = (%clone_1, [1, 32, %floordiv_1]), kwargs = {})Jæ
+pkg.torch.onnx.name_scopesü['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', '_unsafe_view_1']J·
+pkg.torch.onnx.stack_trace¬  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 87, in _polyphase_upsample_fused
+    out = out.view(B, C, ratio, L).transpose(2, 3).reshape(B, C, -1)
+
+£
+_unsafe_view_1
+val_64
+val_68
+val_64
+val_50slice_5node_slice_5"SliceJì
+	namespaceÖ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.upsample: __main__.UpSample1d/slice_5: aten.slice.TensorJØ
+pkg.torch.onnx.class_hierarchyå['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.UpSample1d', 'aten.slice.Tensor']Jó
+pkg.torch.onnx.fx_node}%slice_5 : [num_users=2] = call_function[target=torch.ops.aten.slice.Tensor](args = (%_unsafe_view_1, 2, 2, -2), kwargs = {})J∑
+pkg.torch.onnx.name_scopesò['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.upsample', 'slice_5']J∂
+pkg.torch.onnx.stack_traceó  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 156, in forward
+    x = self.upsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 113, in forward
+    return _polyphase_upsample_fused(x, self.f_fast[:x.shape[1]*self.ratio], self.ratio)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 88, in _polyphase_upsample_fused
+    return out[..., 2:-2]
+
+ﬂ
+mul_139
+slice_5mul_140node_mul_140"MulJã
+	namespace˝: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.act: __main__.SnakeBeta/mul_140: aten.mul.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.mul.Tensor']Jé
+pkg.torch.onnx.fx_nodet%mul_140 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul_139, %slice_5), kwargs = {})J≤
+pkg.torch.onnx.name_scopesì['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.act', 'mul_140']J´
+pkg.torch.onnx.stack_traceå  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+∆
+mul_140cos_1
+node_cos_1"CosJä
+	namespace¸: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.act: __main__.SnakeBeta/cos_1: aten.cos.defaultJ≠
+pkg.torch.onnx.class_hierarchyä['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.cos.default']JÑ
+pkg.torch.onnx.fx_nodej%cos_1 : [num_users=1] = call_function[target=torch.ops.aten.cos.default](args = (%mul_140,), kwargs = {})J∞
+pkg.torch.onnx.name_scopesë['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.act', 'cos_1']J´
+pkg.torch.onnx.stack_traceå  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+–
+val_30
+cos_1sub_46node_sub_46"SubJä
+	namespace¸: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.act: __main__.SnakeBeta/sub_46: aten.sub.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.sub.Tensor']JÜ
+pkg.torch.onnx.fx_nodel%sub_46 : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (1.0, %cos_1), kwargs = {})J±
+pkg.torch.onnx.name_scopesí['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.act', 'sub_46']J´
+pkg.torch.onnx.stack_traceå  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+¢
+sub_46
+(dec.resblocks.0.activations.1.act.inv_2bmul_150node_mul_150"MulJã
+	namespace˝: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.act: __main__.SnakeBeta/mul_150: aten.mul.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.mul.Tensor']J±
+pkg.torch.onnx.fx_nodeñ%mul_150 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub_46, %b_dec_resblocks_0_activations_1_act_inv_2b), kwargs = {})J≤
+pkg.torch.onnx.name_scopesì['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.act', 'mul_150']J´
+pkg.torch.onnx.stack_traceå  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+ﬂ
+slice_5
+mul_150add_132node_add_132"AddJã
+	namespace˝: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.act: __main__.SnakeBeta/add_132: aten.add.TensorJ¨
+pkg.torch.onnx.class_hierarchyâ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.SnakeBeta', 'aten.add.Tensor']Jé
+pkg.torch.onnx.fx_nodet%add_132 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%slice_5, %mul_150), kwargs = {})J≤
+pkg.torch.onnx.name_scopesì['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.act', 'add_132']J´
+pkg.torch.onnx.stack_traceå  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 157, in forward
+    x = self.act(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 57, in forward
+    return snake_fast_inference(x, self.a_eff, self.inv_2b)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\_dynamo\polyfills\__init__.py", line 264, in getattr_and_trace
+    return fn(*args[2:], **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 28, in snake_fast_inference
+    return x + (1.0 - torch.cos(2.0 * a * x)) * inv_2b
+
+‡
+add_132
+slice_3conv1d_5node_Conv_211"Conv*
+group †*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†J˜
+	namespaceÈ: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.activations.slice(1, None, 2).0: __main__.Activation1d/dec.resblocks.0.activations.slice(1, None, 2).0.downsample: __main__.DownSample1d/dec.resblocks.0.activations.slice(1, None, 2).0.downsample.lowpass: __main__.LowPassFilter1d/conv1d_5: aten.conv1d.defaultJ?
+!pkg.onnxscript.rewriter.rule_nameRemoveOptionalBiasFromConvJœ
+pkg.torch.onnx.class_hierarchy¨['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '__main__.Activation1d', '__main__.DownSample1d', '__main__.LowPassFilter1d', 'aten.conv1d.default']J≠
+pkg.torch.onnx.fx_nodeí%conv1d_5 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%add_132, %slice_6, None, [2], [5], [1], 32), kwargs = {})JÄ
+pkg.torch.onnx.name_scopes·['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.activations.slice(1, None, 2).0', 'dec.resblocks.0.activations.slice(1, None, 2).0.downsample', 'dec.resblocks.0.activations.slice(1, None, 2).0.downsample.lowpass', 'conv1d_5']Jñ
+pkg.torch.onnx.stack_trace˜  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 190, in forward
+    xt = a2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 158, in forward
+    x = self.downsample(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 142, in forward
+    return self.lowpass(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 134, in forward
+    return F.conv1d(x, self.f_opt[:C], stride=self.stride, padding=5, groups=C)
+
+∑
+conv1d_5
+mul_160
+dec.resblocks.0.convs2.0.biasconv1d_6node_conv1d_6"Conv*
+group†*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†J∏
+	namespace™: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/dec.resblocks.0.convs2.0: torch.nn.modules.conv.Conv1d/conv1d_6: aten.conv1d.defaultJ†
+pkg.torch.onnx.class_hierarchy~['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J¡
+pkg.torch.onnx.fx_node¶%conv1d_6 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%conv1d_5, %mul_160, %p_dec_resblocks_0_convs2_0_bias, [1], [1]), kwargs = {})Jd
+pkg.torch.onnx.name_scopesF['', 'dec', 'dec.resblocks.0', 'dec.resblocks.0.convs2.0', 'conv1d_6']JÖ
+pkg.torch.onnx.stack_traceÊ
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 191, in forward
+    xt = c2(xt)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1878, in _call_impl
+    return inner()
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1829, in inner
+    result = forward_call(*args, **kwargs)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 366, in _conv_forward
+    return F.conv1d(
+
+Û	
+val_146
+mul_7add_142node_add_142"AddJÉ
+	namespacev: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/add_142: <built-in function add>JÑ
+pkg.torch.onnx.class_hierarchyb['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', '<built-in function add>']Jy
+pkg.torch.onnx.fx_node_%add_142 : [num_users=1] = call_function[target=operator.add](args = (-4, %mul_7), kwargs = {})JG
+pkg.torch.onnx.name_scopes)['', 'dec', 'dec.resblocks.0', 'add_142']JÛ
+pkg.torch.onnx.stack_trace‘  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 192, in forward
+    x = xt + x[:, :, :xt.shape[2]]
+
+ù
+
+add_142
+val_10val_152node_Reshape_152"Reshape*
+	allowzero †J}
+	namespacep: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/slice_7: aten.slice.TensorJ~
+pkg.torch.onnx.class_hierarchy\['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', 'aten.slice.Tensor']Jï
+pkg.torch.onnx.fx_node{%slice_7 : [num_users=1] = call_function[target=torch.ops.aten.slice.Tensor](args = (%add_45, 2, 0, %add_142), kwargs = {})JG
+pkg.torch.onnx.name_scopes)['', 'dec', 'dec.resblocks.0', 'slice_7']JÛ
+pkg.torch.onnx.stack_trace‘  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 192, in forward
+    x = xt + x[:, :, :xt.shape[2]]
+
+û
+
+add_45
+val_149
+val_152
+val_64
+val_50slice_7node_slice_7"SliceJ}
+	namespacep: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/slice_7: aten.slice.TensorJ~
+pkg.torch.onnx.class_hierarchy\['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', 'aten.slice.Tensor']Jï
+pkg.torch.onnx.fx_node{%slice_7 : [num_users=1] = call_function[target=torch.ops.aten.slice.Tensor](args = (%add_45, 2, 0, %add_142), kwargs = {})JG
+pkg.torch.onnx.name_scopes)['', 'dec', 'dec.resblocks.0', 'slice_7']JÛ
+pkg.torch.onnx.stack_trace‘  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 192, in forward
+    x = xt + x[:, :, :xt.shape[2]]
+
+˚	
+conv1d_6
+slice_7add_146node_add_146"AddJ{
+	namespacen: __main__.SynthesizerTrn/dec: __main__.Generator/dec.resblocks.0: __main__.AMPBlock0/add_146: aten.add.TensorJ|
+pkg.torch.onnx.class_hierarchyZ['__main__.SynthesizerTrn', '__main__.Generator', '__main__.AMPBlock0', 'aten.add.Tensor']Jè
+pkg.torch.onnx.fx_nodeu%add_146 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%conv1d_6, %slice_7), kwargs = {})JG
+pkg.torch.onnx.name_scopes)['', 'dec', 'dec.resblocks.0', 'add_146']JÛ
+pkg.torch.onnx.stack_trace‘  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 223, in forward
+    xs = self.resblocks[0](x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 192, in forward
+    x = xt + x[:, :, :xt.shape[2]]
+
+á
+add_146
+dec.conv_post.weightconv1d_7node_Conv_212"Conv*
+group†*
+auto_pad"NOTSET†*
+	dilations@†*
+strides@†*
+pads@@†Jà
+	namespace{: __main__.SynthesizerTrn/dec: __main__.Generator/dec.conv_post: torch.nn.modules.conv.Conv1d/conv1d_7: aten.conv1d.defaultJ?
+!pkg.onnxscript.rewriter.rule_nameRemoveOptionalBiasFromConvJä
+pkg.torch.onnx.class_hierarchyh['__main__.SynthesizerTrn', '__main__.Generator', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J≥
+pkg.torch.onnx.fx_nodeò%conv1d_7 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%add_146, %p_dec_conv_post_weight, None, [1], [3]), kwargs = {})JF
+pkg.torch.onnx.name_scopes(['', 'dec', 'dec.conv_post', 'conv1d_7']Jô
+pkg.torch.onnx.stack_trace˙  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 224, in forward
+    x = self.conv_post(xs)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\conv.py", line 366, in _conv_forward
+    return F.conv1d(
+
+€
+conv1d_7output	node_tanh"TanhJV
+	namespaceI: __main__.SynthesizerTrn/dec: __main__.Generator/tanh: aten.tanh.defaultJh
+pkg.torch.onnx.class_hierarchyF['__main__.SynthesizerTrn', '__main__.Generator', 'aten.tanh.default']JÖ
+pkg.torch.onnx.fx_nodek%tanh : [num_users=1] = call_function[target=torch.ops.aten.tanh.default](args = (%conv1d_7,), kwargs = {})J1
+pkg.torch.onnx.name_scopes['', 'dec', 'tanh']J∏
+pkg.torch.onnx.stack_traceô  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 249, in forward
+    y = self.dec(x)
+  File "C:\Users\XUEFEI\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\MyProject\novasr-unity\Assets\StreamingAssets\export_onnx.py", line 225, in forward
+    x = torch.tanh(x)
+
+main_graph*c Bdec.conv_pre.weightj&
+locationpytorch_model_v2.onnx.dataj
+offset0j
+length896p*ö Bdec.conv_pre.biasJÄ †3æ  c> Ä> ÄÖ> †ﬂΩ †éæ  Á= †ïæ ÄCæ ‡ú= †≈=  êæ ` > Äüº †@> @2æ ‡ëæ †¨Ω  ¶=  Çæ  q; ‡ÁΩ  Ω †‘; `*= `uæ @›= ¿πΩ ‡> ‡ä> †∫º ¿#=*¶ Bdec.resblocks.0.convs1.0.biasJÄ ¿= ‡Ã<  „º †¨< Ä+= ¿ º ‡;= Äuº @F< `= `}= `À; †™º ‡ı; ‡Rº ¿ì< ÄÊº ÄÛº ‡gº `/= Äÿª  kΩ ‡Ω `M= †&=  =  pº  N=  = @Z=  "ª  Îª*¶ Bdec.resblocks.0.convs2.0.biasJÄ ‡›; ‡öº †ΩΩ @àΩ  Ç<   7 @÷º ‡`º `9= †ÜΩ  @Ω @vª ¿nΩ Ä€< @zº ‡û=  D=  ˇ<  øº ‡Î= @£: @(=  ®< Ä	= ‡(= ¿•= †÷º  A=  úΩ ÄŒº †À∫  ı<*f Bdec.conv_post.weightj&
+locationpytorch_model_v2.onnx.dataj
+offset896j
+length896p*µ B(dec.resblocks.0.activations.0.act.inv_2bJÄÑö?bë?Á‹ì?ø~ ?Uı>
+?∏>z?Q?˜Ä?øß?îj?∫ì&?√j?≤()?Ú?∆ª?ìy	?+Ô>†ò$?P ?˘©?ÀW?m†?	z?é3?}Ÿ?"O?Iåø>CjC?e≥B?"’,?ô?*µ B(dec.resblocks.0.activations.1.act.inv_2bJÄ6˝?2ù5?@⁄?A˝£?Ó_?éÁx?Xâf?…?K?Ö"?%Ä˝>+º?3°3?$o~?í?7$?>í.?∏≥N?˘?XŸ>0^?‰-?C?oÜ?Uü?NÈ(?ÀW?@ºY?ﬁu?LΩc?€o•?Ú∏?Îç?*Bval_5J        *Bval_7J       *Bval_9J    *Bval_30J  Ä?*[@Bslice_1j&
+locationpytorch_model_v2.onnx.dataj
+offset1792j
+length1536p*Bval_64J       *Bval_68J˛ˇˇˇˇˇˇˇ*ì Bmul_77JÄ≥@YÛ@®¬•@ú@.ïÙ?]T@+wÄ@Æ(@#ˇ"@w
+@Ë-@jÁ)@V@L/@(@à@ı[@[#Ó?¡⁄m@e™ @ƒ·@íb@œ}!@t,@47#@jÜ@∑_@ﬂΩ?≤¸<@|ä@¥Ò*@@*[ Bslice_3j&
+locationpytorch_model_v2.onnx.dataj
+offset3328j
+length1536p*[  Bmul_98j&
+locationpytorch_model_v2.onnx.dataj
+offset4864j
+length12288p*î Bmul_139JÄb†ˇ?C√@Ge¢@O®[@ﬁ@vá@P‚1@ø @ÓÚ@WSÌ?-˙˚?â<E@b|7@÷@bW"@7LÒ@K£F@è;@â„@›ì@–«&@æ‡@øV@iéû@=“&@C@zvC@∑˜?=¥J@èÜe@™@lˇ?*]  Bmul_160j&
+locationpytorch_model_v2.onnx.dataj
+offset17152j
+length12288p*Bval_149J        *Bval_1J       *Bval_8J   ?*Bval_10Jˇˇˇˇˇˇˇˇ*Bval_50J       *Bval_51J        *Bval_55J        *Bval_56J       *Bval_65J˛ˇˇˇˇˇˇˇ*Bval_146J¸ˇˇˇˇˇˇˇZƒ
+input
+
+
+
+s53"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"&
+!pkg.torch.onnx.original_node_namexbë
+output
+
+
+
+	3*s53 - 4"?
+0pkg.torch.export.graph_signature.OutputSpec.kindUSER_OUTPUT")
+!pkg.torch.onnx.original_node_nametanhj‚
+dec.conv_pre.weight
+
+ 
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone":
+!pkg.torch.onnx.original_node_namep_dec_conv_pre_weightj÷
+dec.conv_pre.bias
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"8
+!pkg.torch.onnx.original_node_namep_dec_conv_pre_biasjÓ
+dec.resblocks.0.convs1.0.bias
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"D
+!pkg.torch.onnx.original_node_namep_dec_resblocks_0_convs1_0_biasjÓ
+dec.resblocks.0.convs2.0.bias
+
+
+ "<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"D
+!pkg.torch.onnx.original_node_namep_dec_resblocks_0_convs2_0_biasj‰
+dec.conv_post.weight
+
+
+ 
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone";
+!pkg.torch.onnx.original_node_namep_dec_conv_post_weightjä
+(dec.resblocks.0.activations.0.act.inv_2b
+
+
+ 
+"9
+/pkg.torch.export.graph_signature.InputSpec.kindBUFFER">
+5pkg.torch.export.graph_signature.InputSpec.persistentFalse"O
+!pkg.torch.onnx.original_node_name*b_dec_resblocks_0_activations_0_act_inv_2bjä
+(dec.resblocks.0.activations.1.act.inv_2b
+
+
+ 
+"9
+/pkg.torch.export.graph_signature.InputSpec.kindBUFFER">
+5pkg.torch.export.graph_signature.InputSpec.persistentFalse"O
+!pkg.torch.onnx.original_node_name*b_dec_resblocks_0_activations_1_act_inv_2bjB
+val_5
+ "1
+$pkg.onnxscript.optimizer.folded_from	['val_4']jB
+val_7
+ "1
+$pkg.onnxscript.optimizer.folded_from	['val_6']jB
+val_9
+ "1
+$pkg.onnxscript.optimizer.folded_from	['val_4']jC
+val_30
+ "1
+$pkg.onnxscript.optimizer.folded_from	['val_6']jÚ
+slice_1
+
+@
+
+"“
+$pkg.onnxscript.optimizer.folded_from©['dec.resblocks.0.activations.0.upsample.f_fast', 'val_31', 'val_32', 'val_33', 'val_34', 'val_35', 'val_36', 'val_37', 'val_38', 'val_39', 'val_40', 'val_41', 'val_42']j\
+val_64
+
+
+"F
+$pkg.onnxscript.optimizer.folded_from['val_56', 'val_62', 'val_63']j\
+val_68
+
+
+"F
+$pkg.onnxscript.optimizer.folded_from['val_65', 'val_66', 'val_67']j{
+mul_77
+
+
+ 
+"]
+$pkg.onnxscript.optimizer.folded_from5['dec.resblocks.0.activations.0.act.a_eff', 'val_73']j˚
+slice_3
+
+ 
+
+"€
+$pkg.onnxscript.optimizer.folded_from≤['dec.resblocks.0.activations.0.downsample.lowpass.f_opt', 'val_31', 'val_55', 'val_74', 'val_75', 'val_76', 'val_77', 'val_78', 'val_79', 'val_80', 'val_81', 'val_82', 'val_83']jÕ
+mul_98
+
+ 
+ 
+"Æ
+$pkg.onnxscript.optimizer.folded_fromÖ['dec.resblocks.0.convs1.0.weight_g', 'dec.resblocks.0.convs1.0.weight_v', 'div', 'linalg_vector_norm', 'val_89', 'val_90', 'val_91']j|
+mul_139
+
+
+ 
+"]
+$pkg.onnxscript.optimizer.folded_from5['dec.resblocks.0.activations.1.act.a_eff', 'val_73']j‘
+mul_160
+
+ 
+ 
+"¥
+$pkg.onnxscript.optimizer.folded_fromã['dec.resblocks.0.convs2.0.weight_g', 'dec.resblocks.0.convs2.0.weight_v', 'div_1', 'linalg_vector_norm_1', 'val_144', 'val_145', 'val_90']j_
+val_149
+
+
+"H
+$pkg.onnxscript.optimizer.folded_from ['val_147', 'val_148', 'val_31']j
+val_1
+ j
+val_8
+ j
+val_10
+
+
+j
+val_50
+
+
+j
+val_51
+
+
+j
+val_55
+ j
+val_56
+ j
+val_65
+ j
+val_146
+ j
+val_0
+
+
+j
+sym_size_int_17
+ j
+conv1d
+
+
+ 
+s53j
+mul_7
+ j
+val_2
+ j
+val_3
+ j
+truediv
+ j
+arange
+	
+3*s53j
+_to_copy
+	
+3*s53j
+add_11
+	
+3*s53j
+mul_11
+	
+3*s53j
+sub_5
+	
+3*s53j
+clamp
+	
+3*s53j
+val_11
+
+
+j
+view
+	
+3*s53j
+
+_to_copy_1
+	
+3*s53j
+add_24
+	
+3*s53j
+sub_11
+ j
+clamp_1
+	
+3*s53j
+val_14
+
+s53
+
+ j
+val_19
+
+3*s53
+j!
+val_21
+
+3*s53
+
+ j(
+_unsafe_index
+
+
+ 
+3*s53j
+val_26
+
+3*s53
+j!
+val_28
+
+3*s53
+
+ j*
+_unsafe_index_1
+
+
+ 
+3*s53j/
+convert_element_type_default
+	
+3*s53j
+sub_15
+	
+3*s53j
+clamp_2
+	
+3*s53j!
+sub_18
+
+
+ 
+3*s53j!
+mul_30
+
+
+ 
+3*s53j!
+add_45
+
+
+ 
+3*s53j#
+conv1d_1
+
+
+@
+3*s53j
+val_54
+
+
+j%
+view_1
+
+
+ 
+
+3*s53j(
+	transpose
+
+
+ 
+3*s53
+j
+mul_52
+ j
+mul_53
+ j
+floordiv
+ j
+val_60
+
+
+j
+val_61
+
+
+j'
+_unsafe_view
+
+
+ 
+6*s53j&
+slice_2
+
+
+ 
+	6*s53 - 4j%
+mul_78
+
+
+ 
+	6*s53 - 4j"
+cos
+
+
+ 
+	6*s53 - 4j%
+sub_31
+
+
+ 
+	6*s53 - 4j%
+mul_88
+
+
+ 
+	6*s53 - 4j%
+add_85
+
+
+ 
+	6*s53 - 4j'
+conv1d_2
+
+
+ 
+	3*s53 - 2j'
+conv1d_3
+
+
+ 
+	3*s53 - 2j'
+conv1d_4
+
+
+@
+	3*s53 - 2j
+add_154
+ j
+val_112
+
+
+j
+val_113
+
+
+j)
+view_2
+
+
+ 
+
+	3*s53 - 2j.
+transpose_1
+
+
+ 
+	3*s53 - 2
+j
+mul_114
+ j
+mul_115
+ j
+
+floordiv_1
+ j
+val_117
+
+
+j
+val_118
+
+
+j-
+_unsafe_view_1
+
+
+ 
+	6*s53 - 4j&
+slice_5
+
+
+ 
+	6*s53 - 8j&
+mul_140
+
+
+ 
+	6*s53 - 8j$
+cos_1
+
+
+ 
+	6*s53 - 8j%
+sub_46
+
+
+ 
+	6*s53 - 8j&
+mul_150
+
+
+ 
+	6*s53 - 8j&
+add_132
+
+
+ 
+	6*s53 - 8j'
+conv1d_5
+
+
+ 
+	3*s53 - 4j'
+conv1d_6
+
+
+ 
+	3*s53 - 4j
+add_142
+ j
+val_152
+
+
+j&
+slice_7
+
+
+ 
+	3*s53 - 4j&
+add_146
+
+
+ 
+	3*s53 - 4j'
+conv1d_7
+
+
+
+	3*s53 - 4Ç¶
+0pkg.torch.export.ExportedProgram.graph_signatureÒ
+# inputs
+p_dec_conv_pre_weight: PARAMETER target='dec.conv_pre.weight'
+p_dec_conv_pre_bias: PARAMETER target='dec.conv_pre.bias'
+p_dec_resblocks_0_convs1_0_weight_g: PARAMETER target='dec.resblocks.0.convs1.0.weight_g'
+p_dec_resblocks_0_convs1_0_weight_v: PARAMETER target='dec.resblocks.0.convs1.0.weight_v'
+p_dec_resblocks_0_convs1_0_bias: PARAMETER target='dec.resblocks.0.convs1.0.bias'
+p_dec_resblocks_0_convs2_0_weight_g: PARAMETER target='dec.resblocks.0.convs2.0.weight_g'
+p_dec_resblocks_0_convs2_0_weight_v: PARAMETER target='dec.resblocks.0.convs2.0.weight_v'
+p_dec_resblocks_0_convs2_0_bias: PARAMETER target='dec.resblocks.0.convs2.0.bias'
+p_dec_conv_post_weight: PARAMETER target='dec.conv_post.weight'
+b_dec_resblocks_0_activations_0_upsample_f_fast: BUFFER target='dec.resblocks.0.activations.0.upsample.f_fast' persistent=False
+b_dec_resblocks_0_activations_0_act_a_eff: BUFFER target='dec.resblocks.0.activations.0.act.a_eff' persistent=False
+b_dec_resblocks_0_activations_0_act_inv_2b: BUFFER target='dec.resblocks.0.activations.0.act.inv_2b' persistent=False
+b_dec_resblocks_0_activations_0_downsample_lowpass_f_opt: BUFFER target='dec.resblocks.0.activations.0.downsample.lowpass.f_opt' persistent=False
+b_dec_resblocks_0_activations_1_upsample_f_fast: BUFFER target='dec.resblocks.0.activations.1.upsample.f_fast' persistent=False
+b_dec_resblocks_0_activations_1_act_a_eff: BUFFER target='dec.resblocks.0.activations.1.act.a_eff' persistent=False
+b_dec_resblocks_0_activations_1_act_inv_2b: BUFFER target='dec.resblocks.0.activations.1.act.inv_2b' persistent=False
+b_dec_resblocks_0_activations_1_downsample_lowpass_f_opt: BUFFER target='dec.resblocks.0.activations.1.downsample.lowpass.f_opt' persistent=False
+x: USER_INPUT
+
+# outputs
+tanh: USER_OUTPUT
+ÇJ
+2pkg.torch.export.ExportedProgram.range_constraints{s53: VR[0, int_oo]}B
+ 
