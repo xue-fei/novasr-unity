@@ -238,9 +238,14 @@ MonoBehaviour:
   modelFileName: pytorch_model_v2.onnx
   autoLoadOnStart: 1
   useGpu: 0
+  inputSampleRate: 16000
+  outputSampleRate: 48000
   inferenceThreads: 4
+  enableOptimization: 1
   showDebugInfo: 1
   lastInferenceTime: 0
+  lastInputLength: 0
+  lastOutputLength: 0
 --- !u!1 &602655613
 GameObject:
   m_ObjectHideFlags: 0
